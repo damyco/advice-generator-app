@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-grayish-blue);
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  max-width: 550px;
+  position: relative;
+}
+
+.container h1 {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.adviceNumber {
+  color: var(--neon-green);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dividerDesktop {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.dividerMobile {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.diceButton {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--neon-green);
+  padding: 1.2rem;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10%;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.diceButton:hover {
+  box-shadow: 0 0 30px 0 var(--neon-green);
+}
+
+.diceButton:disabled {
+  background-color: var(--grayish-blue);
+  cursor: not-allowed;
+}
+
+.diceButton:disabled:hover {
+  box-shadow: none;
+}
+
+@media (max-width: 376px) {
+  .container {
+    max-width: 360px;
+  }
+  .dividerDesktop {
+    display: none;
+  }
+
+  .dividerMobile {
+    display: block;
+  }
+}
+
+@media (max-width: 561px) {
+  .container {
+    max-width: 360px;
+  }
+  .dividerDesktop {
+    display: none;
+  }
+
+  .dividerMobile {
+    display: block;
+  }
+}
