@@ -11,17 +11,19 @@ export default function Content() {
     fetchNewAdvice();
   }, []);
 
-  const url = "https://api.adviceslip.com/advice";
-
   const fetchNewAdvice = async () => {
     try {
-      setAdvice({ data: {}, loading: true });
-      const response = await fetch(url);
+      const response = await fetch("https://api.adviceslip.com/advice");
       const json = await response.json();
       setAdvice({ data: json, loading: false });
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleClick = () => {
+    setAdvice({ data: {}, loading: true });
+    fetchNewAdvice();
   };
 
   return (
@@ -55,7 +57,7 @@ export default function Content() {
         alt="divider pattern"
       />
 
-      <button className={styles.diceButton} onClick={fetchNewAdvice}>
+      <button className={styles.diceButton} onClick={handleClick}>
         <img src="icon-dice.svg" alt="dice icon" />
       </button>
     </div>
